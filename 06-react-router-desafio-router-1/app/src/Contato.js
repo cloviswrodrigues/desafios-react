@@ -3,7 +3,7 @@ import style from './Contato.module.css';
 
 const Contato = () =>  {
     return (
-        <div className={style.contato}>
+        <div className={`animeLeft ${style.contato}`}>
             <img src="https://ranekapi.origamid.dev/wp-content/uploads/2019/03/tablet-1.jpg" alt="" />
             <div>
                 <h2>Entre em contato.</h2>
