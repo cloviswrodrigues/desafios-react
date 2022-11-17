@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import style from './Produto.module.css';
 
 const Produto = () =>  {
     const [ listProdutos, setListProdutos ] = React.useState(null);
@@ -12,20 +14,20 @@ const Produto = () =>  {
     }
     
     React.useEffect(() => {
-        let produtos = getProdutos()
-        setListProdutos(produtos);
+        getProdutos()
+            .then((json) => setListProdutos(json));
     }, []);
 
     if (!listProdutos) return null
-
+    console.log(listProdutos)
     return (
-        <div>
-            {listProdutos.map((produto) => {
-                <div>
+        <div className={style.produtos}>
+            {listProdutos.map((produto) => ( 
+                <Link to={`produto/${produto.id}`} className={style.produtoItem}>
                     <img src={produto.fotos[0].src}></img>
-                    <p>{produto.nome}</p>
-                </div>
-            })}
+                    <h2>{produto.nome}</h2>
+                </Link>
+            ))}
         </div>
     )
 }

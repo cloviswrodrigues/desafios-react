@@ -1,0 +1,18 @@
+.produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.produtoItem {
+    width: 220px;
+    height: 300px;
+    margin-bottom: 2rem;
+}
+
+.produtoItem img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
